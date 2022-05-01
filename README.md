@@ -1,1 +1,1 @@
-This is a reference integration of [Flamedriver](https://github.com/flamewing/flamedriver) into S3&K. Please note I only looked into S3Complete mode, and it fails to build for S&K alone.
+ Hack of Sonic 3 & Knuckles that adds some QoL tweaks, some bug fixes, and music changes.
