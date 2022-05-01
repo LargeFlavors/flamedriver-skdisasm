@@ -1875,3 +1875,4 @@ word_14816E:	dc.w 3
 		dc.b  $E8,  $A,	  0,   0, $FF, $F0
 		dc.b	0,  $C,	  0,   9, $FF, $F0
 		dc.b	8,   9,	  0,  $D, $FF, $F0
+	
