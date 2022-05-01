@@ -5332,11 +5332,9 @@ MusData_MHZ2:			include	"Sound/Music/MHZ2.asm"
 MusData_SOZ1:			include	"Sound/Music/SOZ1.asm"
 MusData_SOZ2:			include	"Sound/Music/SOZ2.asm"
 MusData_LRZ1:			include	"Sound/Music/LRZ1.asm"
-MusData_LRZ2:			include	"Sound/Music/LRZ2.asm"
 MusData_SSZ:			include	"Sound/Music/SSZ.asm"
 MusData_DEZ1:			include	"Sound/Music/DEZ1.asm"
 MusData_DEZ2:			include	"Sound/Music/DEZ2.asm"
-MusData_Minib_SK:		include	"Sound/Music/Miniboss.asm"
 MusData_Boss:			include	"Sound/Music/Zone Boss.asm"
 MusData_DDZ:			include	"Sound/Music/DDZ.asm"
 MusData_PachBonus:		include	"Sound/Music/Pachinko.asm"
@@ -5355,14 +5353,12 @@ Mus_Bank2_Start:	startBank
 MusData_Title:			include	"Sound/Music/Title.asm"
 MusData_1UP:			include	"Sound/Music/1UP.asm"
 MusData_Emerald:		include	"Sound/Music/Chaos Emerald.asm"
-MusData_AIZ1:			include	"Sound/Music/AIZ1.asm"
-MusData_AIZ2:			include	"Sound/Music/AIZ2.asm"
 MusData_HCZ1:			include	"Sound/Music/HCZ1.asm"
 MusData_HCZ2:			include	"Sound/Music/HCZ2.asm"
 MusData_MGZ1:			include	"Sound/Music/MGZ1.asm"
 MusData_MGZ2:			include	"Sound/Music/MGZ2.asm"
-MusData_CNZ2:			include	"Sound/Music/CNZ2.asm"
 MusData_CNZ1:			include	"Sound/Music/CNZ1.asm"
+MusData_AIZ2:			include	"Sound/Music/AIZ2.asm"
 
 	finishBank
 
@@ -5376,12 +5372,12 @@ MusData_ICZ2:			include	"Sound/Music/ICZ2.asm"
 MusData_ICZ1:			include	"Sound/Music/ICZ1.asm"
 MusData_LBZ2:			include	"Sound/Music/LBZ2.asm"
 MusData_LBZ1:			include	"Sound/Music/LBZ1.asm"
+MusData_AIZ1:			include	"Sound/Music/GHZ.asm"
 MusData_SKCredits:		include	"Sound/Music/Credits.asm"
 MusData_GameOver:		include	"Sound/Music/Game Over.asm"
 MusData_Continue:		include	"Sound/Music/Continue.asm"
 MusData_Results:		include	"Sound/Music/Level Outro.asm"
 MusData_Invic:			include	"Sound/Music/Invincible.asm"
-MusData_Menu:			include	"Sound/Music/Menu.asm"
 MusData_FinalBoss:		include	"Sound/Music/Final Boss.asm"
 MusData_PresSega:		include	"Sound/Music/Game Complete.asm"
 
@@ -5399,8 +5395,20 @@ MusData_BPZ:			include	"Sound/Music/Balloon Park.asm"
 MusData_DPZ:			include	"Sound/Music/Desert Palace.asm"
 MusData_CGZ:			include	"Sound/Music/Chrome Gadget.asm"
 MusData_EMZ:			include	"Sound/Music/Endless Mine.asm"
-MusData_S3Credits:		include	"Sound/Music/Sonic 3 Credits.asm"
+MusData_S3Credits:		include	"Sound/Music/Super Sonic.asm"
 MusData_2PMenu:			include	"Sound/Music/Competition Menu.asm"
 MusData_Drown:			include	"Sound/Music/Countdown.asm"
+MusData_Minib_SK:		include	"Sound/Music/Miniboss.asm"
+
+	finishBank
+;-------------------------------------------------------------------------
+; Music Bank 5
+;-------------------------------------------------------------------------
+Mus_Bank5_Start:	startBank
+	Music_Master_Table
+				    include "Sound/Unibank.asm"
+MusData_CNZ2:			include	"Sound/Music/CNZ2.asm"
+MusData_Menu:			include	"Sound/Music/Menu.asm"
+MusData_LRZ2:			include	"Sound/Music/LRZ2.asm"
 
 	finishBank
