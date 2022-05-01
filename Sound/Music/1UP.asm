@@ -2,80 +2,116 @@ Snd_1UP_Header:
 	smpsHeaderStartSong 3
 	smpsHeaderVoice     Snd_1UP_Voices
 	smpsHeaderChan      $06, $03
-	smpsHeaderTempo     $01, $20
+	smpsHeaderTempo     $02, $05
 
 	smpsHeaderDAC       Snd_1UP_DAC
 	smpsHeaderFM        Snd_1UP_FM1,	$0C, $08
 	smpsHeaderFM        Snd_1UP_FM2,	$0C, $19
 	smpsHeaderFM        Snd_1UP_FM3,	$00, $0D
-	smpsHeaderFM        Snd_1UP_FM4,	$0C, $1B
+	smpsHeaderFM        Snd_1UP_FM4,	$18, $1B
 	smpsHeaderFM        Snd_1UP_FM5,	$0C, $12
-	smpsHeaderPSG       Snd_1UP_PSG1,	$00, $03, $00, $00
-	smpsHeaderPSG       Snd_1UP_PSG2,	$00, $03, $00, $00
-	smpsHeaderPSG       Snd_1UP_PSG3,	$00, $03, $00, $00
+	smpsHeaderPSG       Snd_1UP_PSG1,	$00, $01, $00, $00
+	smpsHeaderPSG       Snd_1UP_PSG2,	$00, $01, $00, $00
+	smpsHeaderPSG       Snd_1UP_PSG3,	$00, $00, $00, $00
 
 ; FM1 Data
 Snd_1UP_FM1:
 	smpsSetvoice        $01
-	dc.b	nA4, $18, nFs4, $06, nRst, nE4, nRst, nB4, $0C, nE4, $06, nRst
-	dc.b	nB4, $0C, nD5, nCs5, $30
+	smpsModSet          $14, $01, $06, $06
+	dc.b	nB3, $03, nRst, nB3, $06, nC4, $03, nRst, nC4, $06, nD4, $03
+	dc.b	smpsNoAttack, nEb4, $02, smpsNoAttack, nE4, $02, smpsNoAttack, nF4, $02, smpsNoAttack, nFs4, $09
+	dc.b	nD4, $06, nG4, $03, nRst, nG4, $02, nRst, $01, nG4, $02, nRst
+	dc.b	$01, nG4, $04, nRst, $02, nG4, $04, nRst, $02, nG4, $0C, nRst
+	dc.b	$01
 	smpsStop
 
 ; FM2 Data
 Snd_1UP_FM2:
 	smpsSetvoice        $03
-	dc.b	nE4, $18, nCs4, $06, nRst, nA3, nRst, nAb4, $0C, nB3, $06, nRst
-	dc.b	nAb4, $0C, nB4
-	smpsSetvoice        $02
-	dc.b	nRst, $0C, nA3, $08, nCs4, nE4, nFs4, nAb4
+	smpsModSet          $15, $01, $06, $06
+	dc.b	nRst, $01
+	smpsAlterNote       $03
+	dc.b	nG3, $03, nRst, nG3, $06, nA3, $03, nRst, nA3, $06, nB3, $09
+	dc.b	nRst, $03, nA3, $09, nRst, $03, nG3, $03, nRst, nG3, $02, nRst
+	dc.b	$01, nG3, $02, nRst, $01, nG3, $04, nRst, $02, nG3, $04, nRst
+	dc.b	$02, nG3, $0C, nRst, $01
 	smpsStop
 
 ; FM3 Data
 Snd_1UP_FM3:
 	smpsSetvoice        $00
-	smpsNoteFill        $06
-	dc.b	nA2, $0C, $06, $06, nFs2, $0C, nE2, nA2, $18, nB2, nA2, $0C
-	dc.b	nE2, nA2, nE2, nA2, $30
+	dc.b	nG2, $02, nRst, $01, nRst, $03, nG3, $02, nRst, $01, nG3, $02
+	dc.b	nRst, $01, nA2, $02, nRst, $01, nRst, $03, nA3, $02, nRst, $01
+	dc.b	nA3, $02, nRst, $01, nB2, $02, nRst, $01, nRst, $03, nB3, $02
+	dc.b	nRst, $01, nB3, $02, nRst, $01, nA2, $02, nRst, $01, nRst, $03
+	dc.b	nA3, $02, nRst, $01, nA3, $02, nRst, $01, nG2, $05, nRst, $01
+	dc.b	nD2, $05, nRst, $01, nG2, $05, nRst, $01, nD2, $05, nRst, $01
+	dc.b	nG2, $0C
 	smpsStop
 
 ; FM4 Data
 Snd_1UP_FM4:
-	smpsSetvoice        $02
-	dc.b	nRst, $60, nA4, $10, nB3, $08, nD4, nF4, nG4, nA4, $18
+	smpsSetvoice        $03
+	dc.b	nG4, $03, nF4, nD4, nF4, nG4, $03, nF4, nD4, nF4, nG4, $03
+	dc.b	nF4, nD4, nF4, nA4, $03, nG4, nE4, nG4, nG4, $01, smpsNoAttack, nAb4
+	dc.b	smpsNoAttack, nA4, smpsNoAttack, nBb4, smpsNoAttack, nB4, smpsNoAttack, nC5, smpsNoAttack, nCs5, smpsNoAttack, nD5
+	dc.b	smpsNoAttack, nEb5, smpsNoAttack, nE5, smpsNoAttack, nF5, smpsNoAttack, nFs5, smpsNoAttack, nG5, smpsNoAttack, nFs5
+	dc.b	smpsNoAttack, nF5, smpsNoAttack, nE5, smpsNoAttack, nEb5, smpsNoAttack, nD5, smpsNoAttack, nCs5, smpsNoAttack, nC5
+	dc.b	smpsNoAttack, nB4, smpsNoAttack, nBb4, smpsNoAttack, nA4, smpsNoAttack, nAb4, smpsNoAttack, nG4, $0C, nRst
+	dc.b	$01
 	smpsStop
 
 ; FM5 Data
 Snd_1UP_FM5:
-	smpsAlterNote       $02
-	dc.b	nRst, $0A
+	dc.b	nRst, $02
 	smpsJump            Snd_1UP_FM1
-
-; Unreachable
-	smpsStop
 
 ; PSG1 Data
 Snd_1UP_PSG1:
 	smpsPSGvoice        sTone_0A
-	dc.b	nA3, $30, nB3, nCs4, $30
+	dc.b	nG3, $18, nA3, $18, nB3, $24
 	smpsStop
 
 ; PSG2 Data
 Snd_1UP_PSG2:
 	smpsPSGvoice        sTone_0A
-	dc.b	nE3, $30, nAb3, nA3, $30
+	dc.b	nD4, $18, nFs4, $18, nG4, $24
 	smpsStop
 
 ; PSG3 Data
 Snd_1UP_PSG3:
-	smpsPSGvoice        sTone_0A
-	dc.b	nCs3, $30, nE3, nE3, $30
+	smpsPSGform         $E7
+	smpsPSGvoice        sTone_02
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $FC
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $04
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $FC
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $04
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $FC
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $04
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $FC
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $04
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $FC
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $04
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $FC
+	dc.b	nMaxPSG2, $03, nMaxPSG2
+	smpsPSGAlterVol     $04
+	dc.b	nMaxPSG2, $0C
 	smpsStop
 
 ; DAC Data
 Snd_1UP_DAC:
-	dc.b	dCrashCymbal, $0C, nRst, $06, dKickS3, dMuffledSnare, $03, dMuffledSnare, dMuffledSnare, dMuffledSnare, dMuffledSnare, $0C
-	dc.b	dCrashCymbal, $0C, dMuffledSnare, $06, dMuffledSnare, dMuffledSnare, $03, dMuffledSnare, dMuffledSnare, dMuffledSnare, dMuffledSnare, $0C
-	dc.b	dHiTimpaniS3, $0C, dLowTimpaniS3, dHiTimpaniS3, dLowTimpaniS3, dHiTimpaniS3, $30
+	dc.b	nRst, $30, dHiTimpaniS3, $06, dLowTimpaniS3, dHiTimpaniS3, dLowTimpaniS3, dHiTimpaniS3, $0C, nRst
 	smpsFade
 	smpsStop
 
@@ -117,22 +153,22 @@ Snd_1UP_Voices:
 	smpsVcTotalLevel    $00, $27, $28, $18
 
 ;	Voice $02
-;	$04
-;	$17, $03, $06, $74, 	$5F, $5F, $5F, $5F, 	$00, $08, $00, $00
-;	$00, $00, $00, $0A, 	$0F, $FF, $0F, $0F, 	$1C, $88, $23, $88
+;	$3C
+;	$01, $02, $0F, $04, 	$8D, $52, $9F, $1F, 	$09, $00, $00, $0D
+;	$00, $00, $00, $00, 	$23, $08, $02, $F7, 	$15, $80, $1D, $87
 	smpsVcAlgorithm     $04
-	smpsVcFeedback      $00
+	smpsVcFeedback      $07
 	smpsVcUnusedBits    $00
-	smpsVcDetune        $07, $00, $00, $01
-	smpsVcCoarseFreq    $04, $06, $03, $07
-	smpsVcRateScale     $01, $01, $01, $01
-	smpsVcAttackRate    $1F, $1F, $1F, $1F
+	smpsVcDetune        $00, $00, $00, $00
+	smpsVcCoarseFreq    $04, $0F, $02, $01
+	smpsVcRateScale     $00, $02, $01, $02
+	smpsVcAttackRate    $1F, $1F, $12, $0D
 	smpsVcAmpMod        $00, $00, $00, $00
-	smpsVcDecayRate1    $00, $00, $08, $00
-	smpsVcDecayRate2    $0A, $00, $00, $00
-	smpsVcDecayLevel    $00, $00, $0F, $00
-	smpsVcReleaseRate   $0F, $0F, $0F, $0F
-	smpsVcTotalLevel    $08, $23, $08, $1C
+	smpsVcDecayRate1    $0D, $00, $00, $09
+	smpsVcDecayRate2    $00, $00, $00, $00
+	smpsVcDecayLevel    $0F, $00, $00, $02
+	smpsVcReleaseRate   $07, $02, $08, $03
+	smpsVcTotalLevel    $07, $1D, $00, $15
 
 ;	Voice $03
 ;	$3D

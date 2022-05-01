@@ -471,43 +471,43 @@ Snd_SpecialS_Loop19:
 
 ; DAC Data
 Snd_SpecialS_DAC:
-	dc.b	dQuickLooseSnare, $06, dKickS3, $0C, dQuickLooseSnare, $06, dKickS3, $0C, dKickS3, dKickS3, dKickS3, dQuickLooseSnare
-	dc.b	dKickS3, dQuickLooseSnare, $06, dQuickLooseSnare, $0C, dQuickLooseSnare, $06, dKickS3, $0C, dQuickLooseSnare, $06, dQuickLooseSnare
-	dc.b	$0C, dKickS3, dKickS3, $06, dQuickLooseSnare, $0C, dQuickLooseSnare, $06, dQuickLooseSnare, dKickS3, $06, dElectricHighTom
+	dc.b	dSnareS3, $06, dKickS3, $0C, dSnareS3, $06, dKickS3, $0C, dKickS3, dKickS3, dKickS3, dSnareS3
+	dc.b	dKickS3, dSnareS3, $06, dSnareS3, $0C, dSnareS3, $06, dKickS3, $0C, dSnareS3, $06, dSnareS3
+	dc.b	$0C, dKickS3, dKickS3, $06, dSnareS3, $0C, dSnareS3, $06, dSnareS3, dKickS3, $06, dElectricHighTom
 	dc.b	$03, dElectricHighTom, dElectricHighTom, $06, dElectricHighTom, dElectricMidTom, dElectricMidTom, dElectricMidTom, dElectricLowTom, dElectricLowTom, dElectricLowTom, dKickS3
-	dc.b	dKickS3, dQuickLooseSnare, dKickS3, $12
+	dc.b	dKickS3, dSnareS3, dKickS3, $12
 
 Snd_SpecialS_Loop00:
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, dKickS3, $0C, dKickS3, dKickS3, $12, dQuickLooseSnare, $06
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, dKickS3, $0C, dKickS3, dKickS3, $12, dSnareS3, $06
 	dc.b	dKickS3, $12
 	smpsLoop            $00, $03, Snd_SpecialS_Loop00
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, dKickS3, $0C, dKickS3, dKickS3, $12, dQuickLooseSnare, $0C
-	dc.b	dQuickLooseSnare, $06, dQuickLooseSnare
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, dKickS3, $0C, dKickS3, dKickS3, $12, dSnareS3, $0C
+	dc.b	dSnareS3, $06, dSnareS3
 
 Snd_SpecialS_Loop01:
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, $0C, dKickS3, $06, dQuickLooseSnare, $12, dKickS3, $0C
-	dc.b	dQuickLooseSnare, dKickS3, $06, dKickS3
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, $0C, dKickS3, $06, dSnareS3, $12, dKickS3, $0C
+	dc.b	dSnareS3, dKickS3, $06, dKickS3
 	smpsLoop            $00, $03, Snd_SpecialS_Loop01
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, $0C, dKickS3, dQuickLooseSnare, dKickS3, dQuickLooseSnare, dKickS3
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, $0C, dKickS3, dSnareS3, dKickS3, dSnareS3, dKickS3
 
 Snd_SpecialS_Loop02:
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, $0C, dKickS3
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, $0C, dKickS3
 	smpsLoop            $00, $10, Snd_SpecialS_Loop02
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, $0C, dKickS3, $12, dKickS3, dQuickLooseSnare, $06, dKickS3
-	dc.b	$12, dQuickLooseSnare, $06, dQuickLooseSnare, $0C, dQuickLooseSnare, $06, dKickS3, $0C, dQuickLooseSnare, $06, dQuickLooseSnare
-	dc.b	$0C, dKickS3, dKickS3, $06, dQuickLooseSnare, $0C, dQuickLooseSnare, $06, dQuickLooseSnare, $06
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, $0C, dKickS3, $12, dKickS3, dSnareS3, $06, dKickS3
+	dc.b	$12, dSnareS3, $06, dSnareS3, $0C, dSnareS3, $06, dKickS3, $0C, dSnareS3, $06, dSnareS3
+	dc.b	$0C, dKickS3, dKickS3, $06, dSnareS3, $0C, dSnareS3, $06, dSnareS3, $06
 
 Snd_SpecialS_Loop03:
-	dc.b	dKickS3, $12, dKickS3, dKickS3, $24, dQuickLooseSnare, $18
+	dc.b	dKickS3, $12, dKickS3, dKickS3, $24, dSnareS3, $18
 	smpsLoop            $00, $07, Snd_SpecialS_Loop03
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, $0C, dKickS3, $1E, dKickS3, $06, dQuickLooseSnare, dQuickLooseSnare
-	dc.b	dQuickLooseSnare, dQuickLooseSnare
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, $0C, dKickS3, $1E, dKickS3, $06, dSnareS3, dSnareS3
+	dc.b	dSnareS3, dSnareS3
 
 Snd_SpecialS_Loop04:
-	dc.b	dKickS3, $12, dKickS3, $06, dQuickLooseSnare, dKickS3, $0C, dKickS3, dKickS3, $12, dQuickLooseSnare, $06
+	dc.b	dKickS3, $12, dKickS3, $06, dSnareS3, dKickS3, $0C, dKickS3, dKickS3, $12, dSnareS3, $06
 	dc.b	dKickS3, $12
 	smpsLoop            $00, $07, Snd_SpecialS_Loop04
-	dc.b	dKickS3, $06, dKickS3, dQuickLooseSnare, dKickS3, dKickS3, dQuickLooseSnare, $0C, dQuickLooseSnare, $06, dKickS3, dElectricHighTom
+	dc.b	dKickS3, $06, dKickS3, dSnareS3, dKickS3, dKickS3, dSnareS3, $0C, dSnareS3, $06, dKickS3, dElectricHighTom
 	dc.b	$03, dElectricHighTom, dElectricHighTom, $06, dElectricHighTom, dElectricMidTom, dElectricMidTom, dElectricLowTom, dElectricLowTom
 	smpsJump            Snd_SpecialS_Loop00
 

@@ -2,7 +2,7 @@ Snd_Continue_Header:
 	smpsHeaderStartSong 3
 	smpsHeaderVoiceUVB
 	smpsHeaderChan      $06, $03
-	smpsHeaderTempo     $01, $58
+	smpsHeaderTempo     $01, $43
 
 	smpsHeaderDAC       Snd_Continue_DAC
 	smpsHeaderFM        Snd_Continue_FM1,	$18, $12
@@ -13,10 +13,6 @@ Snd_Continue_Header:
 	smpsHeaderPSG       Snd_Continue_PSG1,	$F4, $04, $00, sTone_0C
 	smpsHeaderPSG       Snd_Continue_PSG2,	$F4, $04, $00, sTone_0C
 	smpsHeaderPSG       Snd_Continue_PSG3,	$00, $03, $00, sTone_0C
-
-; Unreachable
-	smpsStop
-	smpsStop
 
 ; DAC Data
 Snd_Continue_DAC:
@@ -36,10 +32,6 @@ Snd_Continue_Jump00:
 	dc.b	dSnareS3, dSnareS3, $04, dSnareS3, dSnareS3
 	smpsJump            Snd_Continue_Jump00
 	
-; Unreachable
-	dc.b	nRst, $7F, nRst, nRst, nRst, $53
-	smpsStop
-
 ; FM1 Data
 Snd_Continue_FM1:
 	smpsSetvoice        $03
@@ -63,9 +55,6 @@ Snd_Continue_Jump04:
 	dc.b	nEb4, $04, nRst, $08, nEb4, $04, nE4, $08, nC4, $04, nD4, $08
 	dc.b	nC4, $04, nA3, $08, nC4, $04
 	smpsJump            Snd_Continue_Jump04
-
-; Unreachable
-	smpsStop
 
 ; FM2 Data
 Snd_Continue_FM2:
@@ -91,10 +80,6 @@ Snd_Continue_Jump03:
 	dc.b	nG0, $03, nRst, $01, nG0, $0B, nRst, $01
 	smpsJump            Snd_Continue_Jump03
 	
-; Unreachable
-	dc.b	nRst, $7F, nRst, nRst, nRst, nRst, nRst, $41
-	smpsStop
-
 ; FM3 Data
 Snd_Continue_FM3:
 	smpsSetvoice        $08
@@ -123,10 +108,6 @@ Snd_Continue_Jump02:
 	dc.b	nG3, $04
 	smpsJump            Snd_Continue_Jump02
 
-; Unreachable
-	dc.b	nRst, $7F, nRst, nRst, $5C
-	smpsStop
-
 ; FM5 Data
 Snd_Continue_FM5:
 	smpsSetvoice        $06
@@ -143,10 +124,6 @@ Snd_Continue_Jump01:
 	dc.b	$0C, nA3, $18, nB3, nC4, $0C, nC4, $08, nD4, $04, nRst, $14
 	dc.b	nC4, $04
 	smpsJump            Snd_Continue_Jump01
-
-; Unreachable
-	dc.b	nRst, $7F, nRst, nRst, $5C
-	smpsStop
 
 ; PSG1 Data
 Snd_Continue_PSG1:
@@ -167,9 +144,6 @@ Snd_Continue_Jump07:
 	dc.b	nRst, $1A
 	smpsJump            Snd_Continue_Jump07
 
-; Unreachable
-	smpsStop
-
 ; PSG2 Data
 Snd_Continue_PSG2:
 	smpsPSGvoice        sTone_04
@@ -188,9 +162,6 @@ Snd_Continue_Jump06:
 	dc.b	nRst, $1A, nA3, $02, nRst, $0A, nBb3, $02, nRst, $06, nB3, $02
 	dc.b	nRst, $1A
 	smpsJump            Snd_Continue_Jump06
-
-; Unreachable
-	smpsStop
 
 ; PSG3 Data
 Snd_Continue_PSG3:
@@ -228,8 +199,4 @@ Snd_Continue_Jump05:
 	smpsPSGvoice        sTone_04
 	dc.b	nMaxPSG2, $18
 	smpsJump            Snd_Continue_Jump05
-
-; Unreachable
-	smpsStop
-	smpsStop
 
